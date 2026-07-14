@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mrmaneditor000820-ui/Backend_Practise-/issues"
   },
-  "homepage": "https://github.com/mrmaneditor000820-ui/Backend_Practise-#readme"
+  "homepage": "https://github.com/mrmaneditor000820-ui/Backend_Practise-#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
