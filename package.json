@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/mrmaneditor000820-ui/Backend_Practise-#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.4",
+    "morgan": "^1.11.0"
   }
 }
