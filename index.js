@@ -1,7 +1,9 @@
 import express from "express"
 import dotenv from 'dotenv'
+import morgan from "morgan";
 dotenv.config();
 const app = express();
+app.use(morgan())
 
 const port = process.env.PORT 
 
@@ -31,7 +33,7 @@ app.get("/data" , (req,res)=>{
 
 const data = [];
 app.post("/data",(req,res)=>{
-    res.push(data)
+    res.send("data post kar diya ")
 })
 
 
