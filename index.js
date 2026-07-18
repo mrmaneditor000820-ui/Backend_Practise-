@@ -9,6 +9,32 @@ app.get("/" , (req,res)=>{
     res.send ("hello backend");
 })
 
+
+// const data = [
+//     {
+//         name:"abdurehman",
+//         age:30
+//     },
+//     {
+//         name:"abdurehman 2",
+//         age:30
+//     },
+//     {
+//         name:"abdurehman 3",
+//         age:30
+//     }
+// ]
+
+app.get("/data" , (req,res)=>{
+    res.send (data);
+})
+
+const data = [];
+app.post("/data",(req,res)=>{
+    res.push(data)
+})
+
+
 app.listen(port ,()=>{              //app.listen ye pore app ko dekhe ga koi chiz a rai hy ya etc.
    console.log(`server is running on port ${port}`);
    
