@@ -1,6 +1,7 @@
 import express from "express"
 import dotenv from 'dotenv'
 import morgan from "morgan";
+import { connectDb } from "./utils/database.js";
 dotenv.config();
 const app = express();
 app.use(morgan())
@@ -28,6 +29,9 @@ app.get("/" , (req,res)=>{
 //     }
 // ]
 
+
+connectDb()
+
 app.get("/data" , (req,res)=>{
     res.send (data);
 })
@@ -37,7 +41,7 @@ app.post("/post-data",(req,res)=>{
     data.push(req.body)
     res.send({data:req.body,message:"dataposted"},)
     console.log(req.body);
-    
+
     
 })
 
