@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import bcrypt from "bcrypt";
 
 
 const userSchema = new Schema ({
@@ -25,15 +26,17 @@ email:{
 password:{
     type:String,
     required:true,
-    unique:true
 }
 },{timestamps:true})   //timestamps is liye ke jab user bane wo kis time bna time ke liye 
 
-userSchema.pre("save", async function(next){
-    this.password = await bcrypt.hash(this.password,10)   //10 is liye ke password ko hash karne ke liye 10 rounds karne hy
-    next()
-})
+userSchema.pre("save", async function () {
+    if (!this.isModified("password")) return;
+
+    this.password = await bcrypt.hash(this.password, 10);
+});
 
 
 
 const User = mongoose.model("User", userSchema)
+
+export {User}
