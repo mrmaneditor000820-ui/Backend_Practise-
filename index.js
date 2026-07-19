@@ -38,6 +38,7 @@ app.post("/post-data",(req,res)=>{
     res.send({data:req.body,message:"dataposted"},)
     console.log(req.body);
     
+    
 })
 
 

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Ali Ahmed",
+    "email": "ali.ahmed@example.com",
+    "role": "Admin",
+    "isActive": true,
+    "skills": ["JavaScript", "Python", "React"]
+  },
+  {
+    "id": 2,
+    "name": "Sana Khan",
+    "email": "sana.khan@example.com",
+    "role": "User",
+    "isActive": false,
+    "skills": ["UI/UX", "Figma", "HTML/CSS"]
+  }
+]
