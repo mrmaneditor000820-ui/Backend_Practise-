@@ -3,7 +3,6 @@ import dotenv from 'dotenv'
 import morgan from "morgan";
 import { connectDb } from "./utils/database.js";
 import userRouter from "./router/userRouter.js";
-
 dotenv.config();
 const app = express();
 app.use(morgan())

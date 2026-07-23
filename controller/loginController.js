@@ -9,13 +9,13 @@ export const login = async(req , res) =>{
         }
         const user = await User.findOne({email})
         if(!user){
-            res.status(400).json({success:false , message: "invalid email or password"})
+           return res.status(400).json({success:false , message: "invalid email or password"})
         }
 
         const matchPassword =  await bcrypt.compare(password , user.password)
         
         if(!matchPassword){
-            res.status(400).json({success:false , message: " password does not match"})
+          return  res.status(400).json({success:false , message: " password does not match"})
             
         }
         res.status(200).json({success:true , message:"User login successfully",data:user})
