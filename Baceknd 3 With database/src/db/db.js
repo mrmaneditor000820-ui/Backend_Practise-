@@ -1,8 +1,14 @@
-const mongoose = require("mongoose" )
+const mongoose = require("mongoose")
+const dotenv = require("dotenv")
+dotenv.config()
 
-async function connectDB (){
-     await mongoose.connect("mongodb+srv://mrmaneditor000820_db_user:Rehman1985@backendfirstproject.etixrxf.mongodb.net/backend-3-withdatabase")
+async function connectDB() {
+    const url = process.env.URI
+    await mongoose.connect(url)
+    console.log(url);
 
-     console.log("Connected DB");
-     
+    console.log("Connected DB");
+
 }
+
+module.exports = connectDB
